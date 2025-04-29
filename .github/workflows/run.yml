@@ -10,4 +10,8 @@ jobs:
       - name: Checking out the code
         uses: actions/checkout@v4
       - name: Running the code
-        run: dotnet run ./ConsoleApp1/ConsoleApp1.csproj
+        run: |
+          whoami
+          pwd
+          tree .
+          dotnet run ./ConsoleApp1/ConsoleApp1.csproj
