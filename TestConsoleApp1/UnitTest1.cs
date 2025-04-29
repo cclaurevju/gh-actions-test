@@ -14,7 +14,7 @@ public class UnitTest1
     [TestMethod]
     public void TestMethod1()
     {
-        bool result = myApp.IsPositive(-1);
+        bool result = myApp.IsPositive(1);
         Assert.IsTrue(result, "NOT PASSED!");
     }
 }
