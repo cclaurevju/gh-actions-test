@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: Checking out the code
         uses: actions/checkout@v4
+      - name: Verifying the code
+        run: tree .
+      - name: Running tests
+        run: dotnet test
       - name: Running the code
-        run: |
-          whoami
-          pwd
-          tree .
-          dotnet run --project ./ConsoleApp1/ConsoleApp1.csproj
+        run: dotnet run --project ./ConsoleApp1/ConsoleApp1.csproj
