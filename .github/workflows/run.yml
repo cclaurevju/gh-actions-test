@@ -1,0 +1,13 @@
+name: Run workflow
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  run_job:
+    runs-on: self-hosted
+    steps:
+      - name: Checking out the code
+        uses: actions/checkout@v4
+      - name: Running the code
+        uses: dotnet run ./ConsoleApp1/ConsoleApp1.csproj
