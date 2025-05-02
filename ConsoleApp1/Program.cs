@@ -2,17 +2,16 @@
 using Figgle;
 
 
-namespace MyConsoleApp
+namespace MyConsoleApp;
+
+public class App
 {
-    public class App
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(FiggleFonts.Standard.Render("Hello, World!!"));
-        }
-        public bool IsPositive(int number)
-        {
-            return number > 0;
-        }
+        Console.WriteLine(FiggleFonts.Standard.Render("Hello, World!!"));
+    }
+    public bool IsPositive(int number)
+    {
+        return number > 0;
     }
 }

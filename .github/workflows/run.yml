@@ -4,11 +4,16 @@ on:
     branches:
       - "main"
 jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checking code
+        uses: actions/checkout@v4
+      - name: Showing files
+        run: tree.
   run_job:
     runs-on: self-hosted
     steps:
-      - name: Checking out the code
-        uses: actions/checkout@v4
       - name: Verifying the code
         run: tree .
       - name: Running tests
