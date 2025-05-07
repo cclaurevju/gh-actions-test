@@ -23,5 +23,5 @@ jobs:
   show-properties:
     runs-on: self-hosted
     steps:
-      - name: github-id
-        run: echo "${{ github.ref }}"
+      - name: run_id
+        run: echo "${{ github.run_id }}"
