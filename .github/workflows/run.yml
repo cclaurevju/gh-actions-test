@@ -10,7 +10,7 @@ jobs:
       - name: Checking code
         uses: actions/checkout@v4
       - name: Showing files
-        run: tree.
+        run: tree .
   run_job:
     runs-on: self-hosted
     steps:
@@ -20,3 +20,8 @@ jobs:
         run: dotnet test
       - name: Running the code
         run: dotnet run --project ./ConsoleApp1/ConsoleApp1.csproj
+  show-properties:
+    runs-on: self-hosted
+    steps:
+      - name: github-id
+        run: echo "${{ github.ref }}"
