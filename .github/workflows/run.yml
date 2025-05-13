@@ -25,3 +25,9 @@ jobs:
     steps:
       - name: run_id
         run: echo "${{ github.run_id }}"
+
+      - name: Testing env variable
+        run: echo "VARIABLE:\ ${{ env.ENV_VARIABLE }}"
+
+      - name: Testing env secret
+        run: echo ${{ secrets.ENV_SECRET }} > secret.txt && cat secret.txt
