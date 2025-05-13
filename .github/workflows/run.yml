@@ -4,6 +4,17 @@ on:
     branches:
       - "main"
 jobs:
+  show-properties:
+    runs-on: self-hosted
+    environment: development
+    steps:
+      - name: run_id
+        run: echo "${{ github.run_id }}"
+      - name: Testing env variable
+        run: echo "VARIABLE:\ ${{ env.ENV_VARIABLE }}"
+      - name: Testing env secret
+        run: echo ${{ secrets.ENV_SECRET }} > secret.txt && cat secret.txt
+
   build:
     runs-on: self-hosted
     steps:
@@ -20,14 +31,3 @@ jobs:
         run: dotnet test
       - name: Running the code
         run: dotnet run --project ./ConsoleApp1/ConsoleApp1.csproj
-  show-properties:
-    runs-on: self-hosted
-    steps:
-      - name: run_id
-        run: echo "${{ github.run_id }}"
-
-      - name: Testing env variable
-        run: echo "VARIABLE:\ ${{ env.ENV_VARIABLE }}"
-
-      - name: Testing env secret
-        run: echo ${{ secrets.ENV_SECRET }} > secret.txt && cat secret.txt
